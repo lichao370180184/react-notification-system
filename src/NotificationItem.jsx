@@ -247,6 +247,20 @@ var NotificationItem = React.createClass({
     var actionButton = null;
     var title = null;
     var message = null;
+    var mainContainerStyle = {
+      position: 'relative',
+      flex: '100 100 auto'
+    };
+    var image = null;
+    var imageStyle = {
+      flex: '0 0 auto',
+      height: notification.imageHeight || 65,
+      width: notification.imageWidth || 65,
+      marginRight: '10px',
+      objectFit: 'cover',
+      border: 'none',
+      borderRadius: '100%'
+    };
 
     if (this.state.visible) {
       className += ' notification-visible';
@@ -314,12 +328,19 @@ var NotificationItem = React.createClass({
       actionButton = notification.children;
     }
 
+    if (notification.image) {
+      image = <img src={ notification.image } style={ imageStyle }/>;
+    }
+
     return (
       <div className={ className } onClick={ this._dismiss } onMouseEnter={ this._handleMouseEnter } onMouseLeave={ this._handleMouseLeave } style={ notificationStyle }>
-        { title }
-        { message }
-        { dismiss }
-        { actionButton }
+        { image }
+        <div className="main-container" style={ mainContainerStyle }>
+          { title }
+          { message }
+          { dismiss }
+          { actionButton }
+        </div>
       </div>
     );
   }

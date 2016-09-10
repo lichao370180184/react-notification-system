@@ -91,7 +91,6 @@ var STYLES = {
       fontSize: '13px',
       margin: '10px 0 0',
       padding: '10px',
-      display: 'block',
       WebkitBoxSizing: 'border-box',
       MozBoxSizing: 'border-box',
       boxSizing: 'border-box',
@@ -100,6 +99,16 @@ var STYLES = {
       WebkitTransform: 'translate3d(0, 0, 0)',
       transform: 'translate3d(0, 0, 0)',
       willChange: 'transform, opacity',
+      display: 'flex',
+      flexDirection: 'row',
+      WebkitFlexDirection: 'row',
+      MsFlexDirection: 'row',
+      justifyContent: 'space-between',
+      WebkitJustifyContent: 'space-between',
+      MsJustifyContent: 'space-between',
+      alignItems: 'center',
+      WebkitAlignItems: 'center',
+      MsAlignItems: 'center',
 
       isHidden: {
         opacity: 0
